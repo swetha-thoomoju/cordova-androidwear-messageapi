@@ -1,4 +1,4 @@
-package com.davidecalza.cordova.messageapi;
+package it.smartcommunitylab.cordova.messageapi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;

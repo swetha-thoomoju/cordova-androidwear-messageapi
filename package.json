@@ -1,8 +1,17 @@
 {
   "name": "cordova-androidwear-messageapi",
-  "description": "A Cordova plugin for the communication with an AndroidWear device",
   "version": "1.0.0",
-  "author": "Davide Calzà <davide.calza20@gmail.com>",
+  "description": "A Cordova plugin for the communication with an AndroidWear device",
+  "cordova": {
+    "id": "cordova-androidwear-messageapi",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartcommunitylab/cordova-androidwear-messageapi.git"
+  },
   "keywords": [
     "AndroidWear",
     "Android",
@@ -12,27 +21,20 @@
     "MessageApi",
     "Message",
     "SendMessage",
-    "ReceiveMessage"
+    "ReceiveMessage",
+    "ecosystem:cordova",
+    "cordova-android"
   ],
-  "license": "Apache 2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DavideCalza/cordova-androidwear-messageapi.git"
-  },
-  "bugs": {
-    "url": "https://github.com/DavideCalza/cordova-androidwear-messageapi/issues"
-  },
-  "cordova": {
-    "id": "cordova-androidwear-messageapi",
-    "platforms": [
-      "android"
-    ]
-  },
-  "homepage": "https://github.com/DavideCalza/cordova-androidwear-messageapi",
   "engines": [
     {
       "name": "cordova-android",
       "version": ">=5.0.0"
     }
-  ]
+  ],
+  "author": "Smart Community Lab",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/smartcommunitylab/cordova-androidwear-messageapi/issues"
+  },
+  "homepage": "https://github.com/smartcommunitylab/cordova-androidwear-messageapi#readme"
 }

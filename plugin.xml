@@ -6,11 +6,11 @@
 
     <name>AndroidWear MessageApi</name>
     <description>A Cordova plugin for the communication with an AndroidWear device</description>
-    <author>Davide Calzà</author>
+    <author>Smart Community Lab</author>
     <keywords>AndroidWear, Android, Wear, Wearable, Watch, MessageApi, Message, SendMessage, ReceiveMessage</keywords>
     <license>Apache 2.0</license>
-    <repo>https://github.com/DavideCalza/cordova-androidwear-messageapi</repo>
-    <issue>https://github.com/DavideCalza/cordova-androidwear-messageapi/issues</issue>
+    <repo>https://github.com/smartcommunitylab/cordova-androidwear-messageapi</repo>
+    <issue>https://github.com/smartcommunitylab/cordova-androidwear-messageapi/issues</issue>
     
     <engines>
         <engine name="cordova-android" version=">=5.0.0" />
@@ -26,19 +26,19 @@
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AndroidWearApi">
-                <param name="android-package" value="com.davidecalza.cordova.messageapi.MessageApiWearPlugin"/>
+                <param name="android-package" value="it.smartcommunitylab.cordova.messageapi.MessageApiWearPlugin"/>
             </feature>
         </config-file>
         
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.davidecalza.cordova.messageapi.MessageApiWearService" android:enabled="true">
+            <service android:name="it.smartcommunitylab.cordova.messageapi.MessageApiWearService" android:enabled="true">
                 <intent-filter>
                     <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
                 </intent-filter>
             </service>
         </config-file>
         
-        <source-file src="src/android/MessageApiWearPlugin.java" target-dir="src/com/davidecalza/cordova/androidwear/messageapi"/>
-        <source-file src="src/android/MessageApiWearService.java" target-dir="src/com/davidecalza/cordova/androidwear/messageapi"/>
+        <source-file src="src/android/MessageApiWearPlugin.java" target-dir="src/it/smartcommunitylab/cordova/androidwear/messageapi"/>
+        <source-file src="src/android/MessageApiWearService.java" target-dir="src/it/smartcommunitylab/cordova/androidwear/messageapi"/>
     </platform>
 </plugin>
