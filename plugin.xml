@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-androidwear-messageapi"
+    version="1.0.0">
+
+    <name>AndroidWear MessageApi</name>
+    <description>A Cordova plugin for the communication with an AndroidWear device</description>
+    <author>Davide Calzà</author>
+    <keywords>AndroidWear, Android, Wear, Wearable, Watch, MessageApi, Message, SendMessage, ReceiveMessage</keywords>
+    <license>Apache 2.0</license>
+    <repo>https://github.com/DavideCalza/cordova-androidwear-messageapi</repo>
+    <issue>https://github.com/DavideCalza/cordova-androidwear-messageapi/issues</issue>
+    
+    <engines>
+        <engine name="cordova-android" version=">=5.0.0" />
+    </engines>
+    
+    <platform name="android">
+        <framework src="com.google.android.gms:play-services-base:+" />
+        <framework src="com.google.android.gms:play-services-wearable:+" />
+    
+        <js-module src="www/androidwear-api.js" name="AndroidWearApi">
+            <clobbers target="AndroidWearApi" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidWearApi">
+                <param name="android-package" value="com.davidecalza.cordova.messageapi.MessageApiWearPlugin"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="com.davidecalza.cordova.messageapi.MessageApiWearService" android:enabled="true">
+                <intent-filter>
+                    <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+                </intent-filter>
+            </service>
+        </config-file>
+        
+        <source-file src="src/android/MessageApiWearPlugin.java" target-dir="src/com/davidecalza/cordova/androidwear/messageapi"/>
+        <source-file src="src/android/MessageApiWearService.java" target-dir="src/com/davidecalza/cordova/androidwear/messageapi"/>
+    </platform>
+</plugin>
