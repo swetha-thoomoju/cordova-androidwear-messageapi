@@ -1,11 +1,12 @@
 # cordova-androidwear-messageapi
 A Cordova plugin for the communication with an AndroidWear device. 
 It allows you to send and receive messages from the nodes to which the device is connected.
+The service works also if the application gets killed.
 
 ## Installation
 With Cordova CLI, from npm:
 ```
-$ cordova plugin add https://github.com/DavideCalza/cordova-androidwear-messageapi
+$ cordova plugin add https://github.com/smartcommunitylab/cordova-androidwear-messageapi
 ```
 
 ## Platform
