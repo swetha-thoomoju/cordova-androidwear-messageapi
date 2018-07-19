@@ -19,6 +19,7 @@
     <platform name="android">
         <framework src="com.google.android.gms:play-services-base:+" />
         <framework src="com.google.android.gms:play-services-wearable:+" />
+        <framework src="com.android.support:appcompat-v7:28.0.0-alpha3" />
     
         <js-module src="www/androidwear-api.js" name="AndroidWearApi">
             <clobbers target="AndroidWearApi" />
