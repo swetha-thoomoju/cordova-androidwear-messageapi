@@ -28,7 +28,7 @@ public class MessageApiWearPlugin extends CordovaPlugin {
     super.initialize(cordova, webView);
     _client = new GoogleApiClient.Builder(cordova.getActivity().getApplicationContext()).addApi(Wearable.API).build();
     _client.connect();
-    cordova.getActivity().startService(new Intent(cordova.getActivity(), MessageApiWearService.class));
+    cordova.getActivity().startService(new Intent(cordova.getActivity(), it.smartcommunitylab.cordova.messageapi.MessageApiWearService.class));
   }
 
   @Override
