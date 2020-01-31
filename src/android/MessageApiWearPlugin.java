@@ -34,15 +34,26 @@ public class MessageApiWearPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
     Log.i("WearService", "exec");
-    if (action.equals("getMessages")) {
-      try { getMessages(args, callbackContext); }
-      catch (Exception ex) { callbackContext.error(ex.getMessage()); return false; }
+    try {
+      cordova.getActivity().getApplicationContext().getPackageManager().getPackageInfo("com.google.android.wearable.app", PackageManager.GET_META_DATA);
+      if (action.equals("getMessages")) {
+        try { getMessages(args, callbackContext); }
+        catch (Exception ex) { callbackContext.error(ex.getMessage()); return false; }
+      }
+      else if (action.equals("sendMessage")) {
+        try {
+          sendMessage(args, callbackContext);
+        }
+        catch (Exception ex) {
+          callbackContext.error(ex.getMessage());
+          return false;
+        }
+      }
+      else return false;
+    } catch (PackageManager.NameNotFoundException e) {
+      callbackContext.error(e.getMessage());
+      return false;
     }
-    else if (action.equals("sendMessage")) {
-      try { sendMessage(args, callbackContext); }
-      catch (Exception ex) { callbackContext.error(ex.getMessage()); return false; }
-    }
-    else return false;
     return true;
   }
 
